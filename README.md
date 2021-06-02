@@ -10,10 +10,16 @@ Best of luck on your Work Term Report! You do not require any latex knowledge to
 4. Upload these files to your new project.
 5. Compile before making any changes. 
 
+## How to Use :
+There are certain steps that you need to take to customzie this work term report :
+1. If you move the main.tex file anywhere other than the extracted folder, the formatting.sty file **must be on the same folder level** as main.text  
+### For new Latex users:
 
-## For new Latex users:
+a. Ensure that you have a LaTeX install on your system. If you do not, refer to [LaTeX Tutorial](https://latex-tutorial.com/tutorials/)   
+b. Start of by replacing the text "Current Term" in main.tex with the term you last completed. Then click the green button "Recompile".   
+c. Next replace the other default text.   
+d. Note that any text following a percentage sign is a comment and will not be shown in the pdf.   
+d. Also note that between paragraphs there must be at least one blank line. Otherwise the paragraphs will form a giant paragraph!  
 
-1. Start of by replacing the text "Current Term" in main.tex with the term you last completed. Then click the green button "Recompile". 
-2. Next replace the other default text. 
-3. Note that any text following a percentage sign is a comment and will not be shown in the pdf. 
-4. Also note that between paragraphs there must be at least one blank line. Otherwise the paragraphs will form a giant paragraph!
+### For experienced Users 
+a. d
