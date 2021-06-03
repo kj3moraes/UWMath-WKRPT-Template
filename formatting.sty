@@ -5,11 +5,16 @@
 % Required Packages
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
+\usepackage{palatino}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
 \usepackage{graphicx}
-\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
+\graphicspath{ {./images/} }
+\usepackage{amsfonts,amsmath, amssymb, amsthm}
+\usepackage{mathtools}
 \usepackage{setspace}
 \usepackage{tocloft}
 \usepackage{datetime} 
@@ -19,8 +24,9 @@
 
 % Ensures that quotes go 66 99
 \usepackage [english]{babel}
-\usepackage [autostyle, english = american]{csquotes}
+\usepackage [autostyle, english = british]{csquotes}
 \MakeOuterQuote{"}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -70,17 +76,17 @@
            \vskip 50pt
             \textbf{\scshape UNIVERSITY OF WATERLOO} \\
             Faculty of Mathematics
-            \vskip 130pt
+            \vfill
             
             \textbf{\WTT} 
-            \vskip 130pt
+            \vfill
         
             \compName \\ 
             \compCity, \compProvince
-            \vskip 130pt
+            \vfill
 
             \name  \\
-            \term \program \\
+            \term, \program \\
             ID \studentNumber \\
             \noDay\today
         \end{center}
@@ -173,7 +179,7 @@
     \newpage
     \pagenumbering{arabic}
     \fancyhf{}
-    \fancyfoot[R]{\thepage}
+    \fancyfoot[C]{\thepage}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,9 +237,6 @@
     \listoffigures
 }
 
-
-
-
 % Commands about toc, lot, lof headings
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
@@ -250,3 +253,27 @@
 % Ensure proper labeling
 \renewcommand{\contentsname}{\normalsize Table of Contents}
 \renewcommand{\listfigurename}{\normalsize List of Figures}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Custom Math Commands
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\let\oldfloor\floor
+\def\floor{\@ifstar{\oldfloor}{\oldfloor*}}
+\makeatother
