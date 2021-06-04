@@ -5,15 +5,18 @@
 % Required Packages
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
-\usepackage{graphicx}
+\usepackage{xparse}
+\usepackage{palatino}
+\usepackage{float}
 \usepackage[bottom]{footmisc}
+\usepackage{graphicx}
 \graphicspath{ {./images/} }
-
-
-\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
+\usepackage{amsfonts,amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{braket}
 \usepackage{setspace}
 \usepackage{tocloft}
 \usepackage{datetime} 
@@ -23,8 +26,61 @@
 
 % Ensures that quotes go 66 99
 \usepackage [english]{babel}
-\usepackage [autostyle, english = american]{csquotes}
+\usepackage [autostyle, english = british]{csquotes}
 \MakeOuterQuote{"}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Code Formatting and Code Env
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% This environment is an upgrade from VERBATIM because it highlights identifiers and 
+%% keywords in various supported langauges. How to customize :
+%%    * Replace the [LANGUAGE_NAME] with the language that you want formatting in.
+%%		If you dont want formatting in one specific language, then delete that 
+%%		parameter entirely. You will need to specify which language you want formatting 
+%%		in every time you use the listings environment. An example is in the main.tex file.
+%%	  * To change the spacing between the lines, change the number in the \linespace{}.
+%%    * You can change the background colour however you want by altering thr RGB percents
+%%		in backcolor's defintion
+
+
+%% For more information on how to use this package and the parameters below, refer to 
+%% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.90}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\linespread{1}\ttfamily\scriptsize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,             
+	%language = [LANGUAGE_NAME],       
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=0.1pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\NewDocumentCommand{\codeword}{v}{%
+	\texttt{\textcolor{blue}{#1}}%
+}
+\lstset{style=mystyle}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -72,19 +128,19 @@
     \begin{titlepage}
         \begin{center}
            \vskip 50pt
-            \textbf{\scshape UNIVERSITY OF WATERLOO} \\
+            {\large \textbf{\scshape UNIVERSITY OF WATERLOO}} \\
             Faculty of Mathematics
-            \vskip 130pt
+            \vfill
             
             \textbf{\WTT} 
-            \vskip 130pt
+            \vfill
         
             \compName \\ 
             \compCity, \compProvince
-            \vskip 130pt
+            \vfill
 
             \name  \\
-            \term \program \\
+            \term, \program \\
             ID \studentNumber \\
             \noDay\today
         \end{center}
@@ -177,7 +233,7 @@
     \newpage
     \pagenumbering{arabic}
     \fancyhf{}
-    \fancyfoot[R]{\thepage}
+    \fancyfoot[C]{\thepage}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -227,17 +283,6 @@
 % Must not include bold, italics, extras
 
 
-% Command that gets called
-\newcommand{\toc}{
-    \newpage
-    \pageFormatting 
-    \tableofcontents
-    \listoffigures
-}
-
-
-
-
 % Commands about toc, lot, lof headings
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
@@ -254,3 +299,27 @@
 % Ensure proper labeling
 \renewcommand{\contentsname}{\normalsize Table of Contents}
 \renewcommand{\listfigurename}{\normalsize List of Figures}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Custom Math Commands
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\let\oldfloor\floor
+\def\floor{\@ifstar{\oldfloor}{\oldfloor*}}
+\makeatother
