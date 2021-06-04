@@ -6,21 +6,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Fill in:
+% Fill in: 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newcommand{\term}{Current Term } % term that was most recently completed
-\newcommand{\program}{program/plan}
-\newcommand{\WTT}{Title of report}
-\newcommand{\name}{First Lastname}
-\newcommand{\studentNumber}{student number}
+\newcommand{\term}{1B} % term that was most recently completed
+\newcommand{\program}{Honours Computer Science}
+\newcommand{\WTT}{f}
+\newcommand{\name}{Keane Moraes}
+\newcommand{\studentNumber}{20871920}
 
-\newcommand{\yourStreet}{your street}
-\newcommand{\yourCity}{your city}
-\newcommand{\yourProvince}{ your province}
-\newcommand{\yourPostalCode}{your postal code}
+\newcommand{\yourStreet}{21B Street}
+\newcommand{\yourCity}{Dubai}
+\newcommand{\yourProvince}{Dubai}
+\newcommand{\yourPostalCode}{193}
 
 \newcommand{\supervisorsName}{Supervisor's name}
 \newcommand{\supervisorsRole}{Supervisor's role}
@@ -40,7 +40,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\FirstPage
+ \FirstPage
 
 \newpage
 
@@ -71,7 +71,7 @@ marks determine whether the report will receive credit and whether it will be
 considered for an award.
 Thank you for your assistance in preparing this report.
 
-INSERT SIGNATURE HERE
+\textit{INSERT SIGNATURE HERE}
 
 % \includegraphics[height=3cm]{Signature.jpg}
 
@@ -112,7 +112,28 @@ INSERT SIGNATURE HERE
 
 \formattingForRestOfReport
 \section{Introduction}
+\subsection{Java Example}
+\begin{lstlisting}[language = Java]
+	public static void main(String[] args) {
+		System.out.println("I am the senate");
+		String maceWindu = "Not yet!";
+		// LIGHTSABRE FIGHT FOLLOWS
+	}
+\end{lstlisting}
 
+\subsection{Python Example}
+\begin{lstlisting}[language = Python]
+	def print_yodas_words :
+		print("Luminous beings we are, not this crude matter")
+		
+	print_yodas_words()
+\end{lstlisting}
+
+\subsection{R Example}
+\begin{lstlisting}[language = R]
+	jedi_masters <- c("Yoda", "Kenobi", "Windu", "Kit Fisto", "Shaak Ti", "Qui-Gon")
+	# Notice how Anakin Skywalker isnt a jedi master
+\end{lstlisting}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -193,7 +214,11 @@ I can never find where they state this but they want things in APA format.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionNoNumber{Acknowledgments}
-
+\begin{figure}[H]
+	\includegraphics[width = 10cm]{uw_logo}
+	\centering
+	\caption{Nothing to see here}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 You may wish to acknowledge people who helped you with your work report. For example, you may thank someone you interviewed or someone whose files you borrowed. Do so in the last paragraph of your letter or memo, or include a separate acknowledgments page where you thank each person and explain briefly how he or she helped.
