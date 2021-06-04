@@ -8,6 +8,7 @@
 \usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
+\usepackage{xparse}
 \usepackage{palatino}
 \usepackage{float}
 \usepackage[bottom]{footmisc}
@@ -15,6 +16,7 @@
 \graphicspath{ {./images/} }
 \usepackage{amsfonts,amsmath, amssymb, amsthm}
 \usepackage{mathtools}
+\usepackage{braket}
 \usepackage{setspace}
 \usepackage{tocloft}
 \usepackage{datetime} 
@@ -26,6 +28,58 @@
 \usepackage [english]{babel}
 \usepackage [autostyle, english = british]{csquotes}
 \MakeOuterQuote{"}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Code Formatting and Code Env
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% This environment is an upgrade from VERBATIM because it highlights identifiers and 
+%% keywords in various supported langauges. How to customize :
+%%    * Replace the [LANGUAGE_NAME] with the language that you want formatting in.
+%%		If you dont want formatting in one specific language, then delete that 
+%%		parameter entirely. You will need to specify which language you want formatting 
+%%		in every time you use the listings environment. An example is in the main.tex file.
+%%	  * To change the spacing between the lines, change the number in the \linespace{}.
+%%    * You can change the background colour however you want by altering thr RGB percents
+%%		in backcolor's defintion
+
+
+%% For more information on how to use this package and the parameters below, refer to 
+%% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.90}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\linespread{1}\ttfamily\scriptsize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,             
+	%language = [LANGUAGE_NAME],       
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=0.1pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\NewDocumentCommand{\codeword}{v}{%
+	\texttt{\textcolor{blue}{#1}}%
+}
+\lstset{style=mystyle}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,7 +128,7 @@
     \begin{titlepage}
         \begin{center}
            \vskip 50pt
-            \textbf{\scshape UNIVERSITY OF WATERLOO} \\
+            {\large \textbf{\scshape UNIVERSITY OF WATERLOO}} \\
             Faculty of Mathematics
             \vfill
             
@@ -227,6 +281,7 @@
 % Page numbers must be right aligned
 % Must contain tab leaders
 % Must not include bold, italics, extras
+
 
 % Commands about toc, lot, lof headings
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries}
