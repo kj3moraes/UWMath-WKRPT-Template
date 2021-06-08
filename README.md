@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](hhttps://raw.githubusercontent.com/kj3moraes/mathWorkReportTemplate/main/LICENSE)
+
 # Work-Term-Report-Template
 
 (CAUTION : THIS IS STILL AN INCOMPLETE BUILD. IT DOES NOT FIT THE UWMATH WKRPT STANDARDS. DO NOT USE IT NOW)
