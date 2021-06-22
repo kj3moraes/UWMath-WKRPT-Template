@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](hhttps://raw.githubusercontent.com/kj3moraes/mathWorkReportTemplate/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/kj3moraes/mathWorkReportTemplate/main/LICENSE)
 
 # Work-Term-Report-Template
 
