@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/kj3moraes/mathWorkReportTemplate/main/LICENSE)
 
-# Work-Term-Report-Template
+# UWMath Work Report Template
 
 (CAUTION : THIS IS STILL AN INCOMPLETE BUILD. IT DOES NOT FIT THE UWMATH WKRPT STANDARDS. DO NOT USE IT NOW)
 Best of luck on your Work Term Report! You do not require any latex knowledge to use this template. As noted in private communications with the Work Report Team formatting cannot be plagiarized and confirmed I am allowed to share formatting but not content. Please let me know if there are any errors in the template. 
